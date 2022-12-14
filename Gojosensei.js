@@ -1146,15 +1146,15 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                 }
             }
             break
-            case 'زوجني': {
+            case 'marry me': {
             if (!m.isGroup) return replay(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
-            let jawab = `「مبروك واعتبره/ا زوجك/تك 🤡」◣
+            let jawab = `「مبروك واعتبره/ا زوجك/تك 」◣
 
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
-「اضغط اقبل اذا موافق 😂🤡」◣`
+「اضغط اقبل اذا موافق 」◣`
             let ments = [me, jodoh]
             let buttons = [
                         { buttonId: '「اقبل🤗」◣', buttonText: { displayText: '「اقبل🤗」◣' }, type: 1 }
@@ -1162,17 +1162,17 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: ments})
             }
             break
-            case 'زواج': {
+            case 'marry': {
             if (!m.isGroup) return replay(`${mess.group}`)
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
             let jawab = `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
-	    「 معلش زوجناكم لأنكم تصلحون لبعض 🤡 」◣
-	    「 الي يشوفهم مناسبين لبعض زيي يضغط يب 🤡 」◣`
+	    「 معلش زوجناكم لأنكم تصلحون لبعض  」◣
+	    「 الي يشوفهم مناسبين لبعض زيي يضغط يب  」◣`
             let menst = [orang, jodoh]
             let buttons = [
-                        { buttonId: '「 يب هم مناسبين لبعض😂🤡 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' }, type: 1 }
+                        { buttonId: '「 يب هم مناسبين لبعض 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' }, type: 1 }
                     ]
                     await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: menst})
             }
@@ -1292,10 +1292,10 @@ GojoMdNx.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${san
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
             let jawab = `「 اكبر *${command}* في الجروب هو @${jodoh.split('@')[0]} 」◣
-	    「 صح؟ 🥲 」◣`
+	    「 صح؟  」◣`
             let ments = [me, jodoh]
             let buttons = [
-                        { buttonId: '「 يب 😂 」◣', buttonText: { displayText: '「 يب 😂 」◣' }, type: 1 }
+                        { buttonId: '「 يب  」◣', buttonText: { displayText: '「 يب 😂 」◣' }, type: 1 }
                     ]
                     await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: ments})
             }
@@ -1334,7 +1334,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 GojoMdNx.sendMessage(m.chat, reactionMessage)
             }
             break  
-            case 'انضم': {
+            case 'join ': {
                 if (!isCreator) return replay(`${mess.owner}`)
                 if (!text) return replay(`Enter The Group Link!`)
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replay(`Invalid Link!`)
@@ -1343,7 +1343,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 await GojoMdNx.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
-            case 'غادر': {
+            case 'left ': {
                 if (!isCreator) return replay(`${mess.owner}`)
                 await GojoMdNx.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
@@ -1356,7 +1356,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
           reply(`Exif Has Been Successfully Changed to\n\n🐦 Packname : ${global.packname}\n🐦 Author : ${global.author}`)
             }
             break
-	case 'طرد': {
+	case 'remove ': {
 		if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
@@ -1364,7 +1364,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
 		await GojoMdNx.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	case 'اضافة': {
+	case 'add': {
 		if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
@@ -1388,19 +1388,19 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
 		await GojoMdNx.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-        case 'حظر': {
+        case 'ban': {
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await GojoMdNx.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-        case 'الغاء.حظر': {
+        case 'Cancel ban ': {
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await GojoMdNx.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	    case 'تغيير اسم': case 'setgcname': case 'setsubject': {
+	    case 'change name ' case 'setgcname': case 'setsubject': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) replay(`${mess.admin}`)
@@ -1426,7 +1426,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 reply(mess.success)
                 }
                 break
-           case 'غير صورة جروب': case 'تغيير صورة الجروب': case 'حطها.صورة.الجروب': {
+           case 'change group image ': case 'تغيير صورة الجروب': case 'حطها.صورة.الجروب': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
@@ -1437,13 +1437,13 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 reply(mess.success)
                 }
                 break
-	case 'المنشن': case `منشن`: {
+	case 'mention': case `منشن`: {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
-let teks = `「المنشن الجماعي」◣
+let teks = `「mention all」◣
  
- ➲ *${q ? q : 'اصحو من النوم'}*\n\n`
+ ➲ *${q ? q : 'صباحوn\n`
                 for (let mem of participants) {
                 teks += `👤 @${mem.id.split('@')[0]}\n`
                 }
@@ -1728,7 +1728,7 @@ break
                 }
             }
             break
-            case 'حذف': case 'احذف': {
+            case 'delete ': case 'احذف': {
                 if (!m.quoted) reply(false)
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`)
@@ -1853,7 +1853,7 @@ break
                     GojoMdNx.sendText(m.chat, '「 الموجودين الأن 」◣\n\n' + online.map(v => '👤 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
-            case 'ملصق': case 's': case 'ستيكر': case 'س': {
+            case 'sticker ': case 's': case 'sticker ': case 'س': {
             if (!quoted) return replay(`Reply Video/Image With Caption ${prefix + command}`)
             reply(mess.wait)
                     if (/image/.test(mime)) {
@@ -3384,11 +3384,11 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             hydratedFooterText: `┌─❖
 ┌─❖ مـرحبـاً 🤗 」
 └┬❖ 「 ${pushname} 」
-││✑「مـعـك بـوت غـوجـو 👋🏻」◣
+││✑「مـعـك 𝙏𝘼𝙍𝙏𝘼𝙂𝙇𝙄𝘼 𝘽𝙊𝙏✩👋🏻」◣
 ││✑「مـن مـمـلـكـة غولد 🤗」◣
 │└───────────────┈ ⳹
  「 مـعـلـومـات عـن الـبـوت 」
-│✙「 اسـم الـبـوت 」◣ : 「 غوجو ✨🤞🏻 」◣
+│✙「 اسـم الـبـوت 」◣ : 「 𝙏𝘼𝙍𝙏𝘼𝙂𝙇𝙄𝘼✩  」◣
 │✙「 رقـم الـمـالـك 」◣ : ${global.owner}
 │✙「عـدد الـمـسـتـخـدمـيـن」◣ : ${Object.keys(global.db.data.users).length}
 └┬──────────────┈ ⳹
@@ -3439,11 +3439,11 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             hydratedFooterText: `
 ┌─❖ مـرحبـاً 🤗 」
 └┬❖ 「 ${pushname} 」
-││✑「مـعـك بـوت غـوجـو 👋🏻」◣
+││✑「مـعـك 𝙏𝘼𝙍𝙏𝘼𝙂𝙇𝙄𝘼 𝘽𝙊𝙏✩ 👋🏻」◣
 ││✑「مـن مـمـلـكـة غولد 🤗」◣
 │└───────────────┈ ⳹
  「 مـعـلـومـات عـن الـبـوت 」
-│✙「 اسـم الـبـوت 」◣ : 「 غوجو ✨🤞🏻 」◣
+│✙「 اسـم الـبـوت 」◣ : 「 𝙏𝘼𝙍𝙏𝘼𝙂𝙇𝙄𝘼✩  」◣
 │✙「 رقـم الـمـالـك 」◣ : ${global.owner}
 │✙「عـدد الـمـسـتـخـدمـيـن」◣ : ${Object.keys(global.db.data.users).length}
 └┬──────────────┈ ⳹
@@ -3485,7 +3485,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `「 مرحبا 👋🏻  」◣
-		    「 معك بوت غوجو 🤗 」◣
+		    「 معك 𝙏𝘼𝙍𝙏𝘼𝙂𝙇𝙄𝘼 𝘽𝙊𝙏✩ 🤗 」◣
 		    「 افضل بوت عربي 」◣
 
  「 رابط شرح كيف تصنع بوت عربي طريقة سهله راقب وتعلم. ولاتنسى الاشتراك بالقناة」◣
