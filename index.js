@@ -145,16 +145,16 @@ Kon = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${encodeURICom
 Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
                     GojoMdNx.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `
-⭐✑ هلا👋 @${num.split("@")[0]},
-⭐✑ نورت جروبنا ${metadata.subject}
+⭐✑ HI @${num.split("@")[0]},
+⭐✑ welcome to [Genshin Impact💥] group ${metadata.subject}
 
-⭐✑ الوصف : ${metadata.desc}
+⭐✑ description  : ${metadata.desc}
 
-⭐✑ اتمنى ان تستمتع معنا 😍✨!!`} )
+⭐✑ i hopeyou have a fun with everyone! 🫂🌊!!`} )
                 } else if (anu.action == 'remove') {
                     GojoMdNx.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `⭐✑ @${num.split("@")[0]} غادر ${metadata.subject}
 
-⭐✑ تطلع يجي غيرك 😌✨` })
+⭐✑ We lost another person! 🌀🌊` })
                 }
             }
         } catch (err) {
