@@ -154,7 +154,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
                 } else if (anu.action == 'remove') {
                     GojoMdNx.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `⭐✑ @${num.split("@")[0]} غادر ${metadata.subject}
 
-⭐✑ We lost another person! 🌀🌊` })
+⭐✑ We lost another person![اللي باعنا خسر دلعنا] 🌀🌊` })
                 }
             }
         } catch (err) {
