@@ -22,7 +22,7 @@ global.APIKeys = {
 global.owner = ['96891103640']
 global.premium = ['96891103640']
 global.ownernomer = '96891103640'
-global.ownername = '( الـمـطـور )'
+global.ownername = '( ₐⱼₐₓ )'
 global.botname = '( 𝙏𝘼𝙍𝙏𝘼𝙂𝙇𝙄𝘼 𝘽𝙊𝙏✩ )'
 global.footer = '( غـوجـو )'
 global.ig = 'https://github.com/nexusNw'
@@ -43,7 +43,7 @@ global.mess = {
     private: '*「 هـذا الامـر فـي الـخـاص فـقـط 」◣*',
     bot: '*「 هـذا الامـر مـخـصـص لـ الـبـوت 」◣*',
     wait: '*「 𝚆𝙰𝙸𝚃، اوني تشان... 」◣*',
-    error: 'Error! Maybe Api Key Is Expired🤔!',
+    error: 'Error! بوظتو البوت يخربيتكو!',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 1000 Hours',
 }
     global.limitawal = {
